@@ -31,6 +31,7 @@ while True:
             print("\nΛέσχες:")
             for inf in info_lst:
                 print("-", inf[0])
+
         case "2":
             c = input("Επίλεξε λέσχη (1-4): ").strip()
             if c in ["1", "2", "3", "4"]:
@@ -38,6 +39,7 @@ while True:
                 print(f"Λέσχη: {info_lst[idx][0]}, Υπεύθυνος: {info_lst[idx][1]}, Μέρα: {info_lst[idx][2]}")
             else:
                 print("Λάθος.")
+
         case "3":
             c = input("Επίλεξε λέσχη (1-4): ").strip()
             if c in ["1", "2", "3", "4"]:
@@ -45,12 +47,39 @@ while True:
                 print(f"Μαθητές:", stu_lst[idx])
             else:
                 print("Λάθος.")
+
         case "4":
-            pass
+            name = input("Όνομα: ").strip().title()
+            fnd = False
+            for i in range(4):
+                if name in stu_lst[i]:
+                    print(f"Βρέθηκε στη λέσχη: {info_lst[i][0]}")
+                    fnd = True
+            if not fnd:
+                print("Δεν βρέθηκε.")
+
         case "5":
-            pass
+            c = input("Λέσχη για προσθήκη (1-4): ").strip()
+            if c in ["1", "2", "3", "4"]:
+                name = input("Όνομα: ").strip().title()
+                idx = int(c) - 1
+                stu_lst[idx].add(name)
+                print("ΟΚ.")
+            else:
+                print("Λάθος.")
+                
         case "6":
-            pass
+            c = input("Λέσχη για διαγραφή (1-4): ").strip()
+            if c in ["1", "2", "3", "4"]:
+                name = input("Όνομα: ").strip().title()
+                idx = int(c) - 1
+                if name in stu_lst[idx]:
+                    stu_lst[idx].remove(name)
+                    print("ΟΚ.")
+                else:
+                    print("Δεν υπάρχει.")
+            else:
+                print("Λάθος.")
         case "7":
             pass
         case "8":
