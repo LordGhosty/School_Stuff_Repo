@@ -67,7 +67,7 @@ while True:
                 print("ΟΚ.")
             else:
                 print("Λάθος.")
-                
+
         case "6":
             c = input("Λέσχη για διαγραφή (1-4): ").strip()
             if c in ["1", "2", "3", "4"]:
@@ -80,14 +80,40 @@ while True:
                     print("Δεν υπάρχει.")
             else:
                 print("Λάθος.")
+
         case "7":
-            pass
+            all_s = r_set | t_set | m_set | s_set
+            print("Όλοι:", all_s)
+
         case "8":
-            pass
+            c1 = input("Λέσχη 1 (1-4): ").strip()
+            c2 = input("Λέσχη 2 (1-4): ").strip()
+            if c1 in ["1","2","3","4"] and c2 in ["1","2","3","4"]:
+                if c1 == c2:
+                    print("Ίδια λέσχη.")
+                else:
+                    i1, i2 = int(c1)-1, int(c2)-1
+                    com = stu_lst[i1] & stu_lst[i2]
+                    print("Κοινοί:", com)
+            else:
+                print("Λάθος.")
+
         case "9":
-            pass
+            c = input("Λέσχη (1-4): ").strip()
+            if c in ["1", "2", "3", "4"]:
+                idx = int(c) - 1
+                target_s = stu_lst[idx]
+                other_s = set()
+                for j in range(4):
+                    if j != idx:
+                        other_s = other_s | stu_lst[j]
+                only_here = target_s - other_s
+                print("Μόνο εδώ:", only_here)
+            else:
+                print("Λάθος.")
+
         case "10":
-            print("Τέλος.")
+            print("Πραγματοποιήθηκε έξοδος.")
             break
         case _:
             print("Λάθος επιλογή.")
