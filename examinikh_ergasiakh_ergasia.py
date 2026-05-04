@@ -28,11 +28,23 @@ while True:
 
     match choice:
         case "1":
-            pass
+            print("\nΛέσχες:")
+            for inf in info_lst:
+                print("-", inf[0])
         case "2":
-            pass
+            c = input("Επίλεξε λέσχη (1-4): ").strip()
+            if c in ["1", "2", "3", "4"]:
+                idx = int(c) - 1
+                print(f"Λέσχη: {info_lst[idx][0]}, Υπεύθυνος: {info_lst[idx][1]}, Μέρα: {info_lst[idx][2]}")
+            else:
+                print("Λάθος.")
         case "3":
-            pass
+            c = input("Επίλεξε λέσχη (1-4): ").strip()
+            if c in ["1", "2", "3", "4"]:
+                idx = int(c) - 1
+                print(f"Μαθητές:", stu_lst[idx])
+            else:
+                print("Λάθος.")
         case "4":
             pass
         case "5":
