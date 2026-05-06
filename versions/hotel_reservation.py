@@ -30,7 +30,7 @@ try:
     update_reservation(101, 'Νίκος')
     delete_reservation(102)
     
-    print("\n-o-o-o-o-o-o~ Τελική Λίστα Κρατήσεων ~o-o-o-o-o-o")
+    print("\no-o-o-o-o-o~ Τελική Λίστα Κρατήσεων ~o-o-o-o-o-o")
     view_reservations()
 
 
